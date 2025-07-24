@@ -23,7 +23,7 @@ function createTable(data) {
     }
 
     const table = document.createElement('table');
-    table.border = '1';
+    table.border = '1px';
     table.style.borderCollapse = 'collapse';
 
     // 테이블 헤더 생성
@@ -34,7 +34,7 @@ function createTable(data) {
         headers.forEach(header => {
             const th = document.createElement('th');
             th.textContent = header;
-            th.style.padding = '8px';
+            th.style.padding = '10px';
             headerRow.appendChild(th);
         });
 
@@ -48,7 +48,7 @@ function createTable(data) {
         // 객체의 키와 값을 순회
         Object.keys(item).forEach((key, index) => {
             const td = document.createElement('td');
-            td.style.padding = '8px';
+            td.style.padding = '10px';
 
             // 두 번째 컬럼(인덱스 1)인 경우 a 태그로 생성
             if (index === 1) {
