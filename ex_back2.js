@@ -29,10 +29,10 @@ function createTable(data) {
     // 테이블 헤더 생성
     if (data.length > 0) {
         const headerRow = document.createElement('tr');
-
+        
         // 4개의 컬럼 헤더 설정 (데이터에 없으면 기본값 사용)
         const headerNames = ['link1', 'link2', 'link3', 'link4'];
-
+        
         // 데이터에 있는 헤더가 있으면 사용
         const dataHeaders = Object.keys(data[0]);
         for (let i = 0; i < 4; i++) {
@@ -54,11 +54,11 @@ function createTable(data) {
         for (let i = 0; i < 4; i++) {
             const td = document.createElement('td');
             td.style.padding = '10px';
-
+            
             if (i < keys.length) {
                 const key = keys[i];
                 const value = item[key];
-
+                
                 // 두 번째 컬럼(인덱스 1)인 경우 a 태그로 생성
                 if (i === 1 && value) {
                     const link = document.createElement('a');
@@ -73,7 +73,7 @@ function createTable(data) {
                 // 데이터가 없는 경우 빈 셀
                 td.textContent = '';
             }
-
+            
             row.appendChild(td);
         }
 

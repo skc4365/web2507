@@ -29,18 +29,14 @@ function createTable(data) {
     // 테이블 헤더 생성
     if (data.length > 0) {
         const headerRow = document.createElement('tr');
-        
-        // 4개의 컬럼 헤더 설정 (데이터에 없으면 기본값 사용)
-        const headerNames = ['link1', 'link2', 'link3', 'link4'];
-        
-        // 데이터에 있는 헤더가 있으면 사용
-        const dataHeaders = Object.keys(data[0]);
-        for (let i = 0; i < 4; i++) {
+        const headers = Object.keys(data[0]);
+
+        headers.forEach(header => {
             const th = document.createElement('th');
-            th.textContent = i < dataHeaders.length ? dataHeaders[i] : headerNames[i];
+            th.textContent = header;
             th.style.padding = '10px';
             headerRow.appendChild(th);
-        }
+        });
 
         table.appendChild(headerRow);
     }
@@ -48,40 +44,31 @@ function createTable(data) {
     // 테이블 데이터 행 생성
     data.forEach(item => {
         const row = document.createElement('tr');
-        const keys = Object.keys(item);
 
-        // 4개의 컬럼 데이터 채우기
-        for (let i = 0; i < 4; i++) {
+        // 객체의 키와 값을 순회
+        Object.keys(item).forEach((key, index) => {
             const td = document.createElement('td');
             td.style.padding = '10px';
-            
-            if (i < keys.length) {
-                const key = keys[i];
-                const value = item[key];
-                
-                // 두 번째 컬럼(인덱스 1)인 경우 a 태그로 생성
-                if (i === 1 && value) {
-                    const link = document.createElement('a');
-                    link.href = value; // 값을 URL로 사용
-                    link.textContent = value; // 링크 텍스트도 URL로 표시
-                    link.target = "_blank"; // 새 탭에서 열기
-                    td.appendChild(link);
-                } else {
-                    td.textContent = value || '';
-                }
+
+            // 두 번째 컬럼(인덱스 1)인 경우 a 태그로 생성
+            if (index === 1) {
+                const link = document.createElement('a');
+                link.href = item[key]; // 값을 URL로 사용
+                link.textContent = item[key]; // 링크 텍스트도 URL로 표시
+                link.target = "_blank"; // 새 탭에서 열기 (필요에 따라 설정)
+                td.appendChild(link);
             } else {
-                // 데이터가 없는 경우 빈 셀
-                td.textContent = '';
+                td.textContent = item[key];
             }
-            
+
             row.appendChild(td);
-        }
+        });
 
         table.appendChild(row);
     });
 
     // 기존 테이블이 있으면 제거
-    const container = document.getElementById('tableContainer');
+    const container = document.getElementById('exContainer');
     if (container) {
         container.innerHTML = '';
         container.appendChild(table);

@@ -68,7 +68,7 @@ function createTable(data) {
     });
 
     // 기존 테이블이 있으면 제거
-    const container = document.getElementById('exContainer');
+    const container = document.getElementById('tableContainer');
     if (container) {
         container.innerHTML = '';
         container.appendChild(table);
