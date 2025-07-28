@@ -4,7 +4,7 @@
 > [!NOTE]
 > HTML, CSS 관련 기본예제
 
-### NOTE
+### ./exJs/index.html
 > [!NOTE]
 > JavaScript 관련 기본예제
 
