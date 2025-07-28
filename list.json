@@ -1,21 +1,116 @@
 [
-  {"name":"수업예제", "link":"./ex/index.html"},
-  {"name":"김지수", "link":"https://kjs-alt.github.io/html2507/"},
-  {"name":"이주환", "link":"https://goentvy.github.io/html2507/"},
-  {"name":"김가빈", "link":"https://gdbin1.github.io/html2507/"},
-  {"name":"김동현", "link":"https://dongdong-byte.github.io/html2507/"},
-  {"name":"김명횡", "link":"https://kimmh74.github.io/html2507/"},
-  {"name":"나유진", "link":"https://nayujin-svg.github.io/html2507/"},
-  {"name":"박근철", "link":"https://parkote9212.github.io/html2507"},
-  {"name":"박창일", "link":"https://crist-17.github.io/html2507_4/"},
-  {"name":"심성보", "link":"https://simsbgit.github.io/html2507/"},
-  {"name":"이경진", "link":"https://kungjin.github.io/html2507/"},
-  {"name":"이은정", "link":"https://lej9310.github.io/html2507/"},
-  {"name":"이정재", "link":"https://onwardjake.github.io/html2507/"},
-  {"name":"임승우", "link":"https://lsw1232414.github.io/html2507"},
-  {"name":"장경건", "link":"https://gxnny19.github.io/html2507/"},
-  {"name":"정희찬", "link":"https://huch99.github.io/html2507/"},
-  {"name":"최윤아", "link":"https://lejardindeyuna.github.io/html2507_3/"},
-  {"name":"최지현", "link":"https://jihyeon1011.github.io/html2507_3/"},
-  {"name":"김영남", "link":"https://youngnam81-kim.github.io/html2507/"}
+  {
+    "name": "수업예제",
+    "link1": "./ex/index.html",
+    "link2": "./exJs/index.html",
+    "link3": "./test/index.html"
+  },
+  {
+    "name": "김지수",
+    "link1": "https://kjs-alt.github.io/html2507/",
+    "link2": "https://kjs-alt.github.io/js2507/",
+    "link3": "https://kjs-alt.github.io/test2507/"
+  },
+  {
+    "name": "이주환",
+    "link1": "https://goentvy.github.io/html2507/",
+    "link2": "https://goentvy.github.io/js2507/",
+    "link3": "https://goentvy.github.io/test2507/"
+  },
+  {
+    "name": "김가빈",
+    "link1": "https://gdbin1.github.io/html2507/",
+    "link2": "https://gdbin1.github.io/js2507/",
+    "link3": "https://gdbin1.github.io/test2507/"
+  },
+  {
+    "name": "김동현",
+    "link1": "https://dongdong-byte.github.io/html2507/",
+    "link2": "https://dongdong-byte.github.io/js2507/",
+    "link3": "https://dongdong-byte.github.io/test2507/"
+  },
+  {
+    "name": "김명횡",
+    "link1": "https://kimmh74.github.io/html2507/",
+    "link2": "https://kimmh74.github.io/js2507/",
+    "link3": "https://kimmh74.github.io/test2507/"
+  },
+  {
+    "name": "나유진",
+    "link1": "https://nayujin-svg.github.io/html2507/",
+    "link2": "https://nayujin-svg.github.io/js2507/",
+    "link3": "https://nayujin-svg.github.io/test2507/"
+  },
+  {
+    "name": "박근철",
+    "link1": "https://parkote9212.github.io/html2507",
+    "link2": "https://parkote9212.github.io/js2507",
+    "link3": "https://parkote9212.github.io/test2507"
+  },
+  {
+    "name": "박창일",
+    "link1": "https://crist-17.github.io/html2507_4/",
+    "link2": "https://crist-17.github.io/js2507/",
+    "link3": "https://crist-17.github.io/test2507/"
+  },
+  {
+    "name": "심성보",
+    "link1": "https://simsbgit.github.io/html2507/",
+    "link2": "https://simsbgit.github.io/js2507/",
+    "link3": "https://simsbgit.github.io/test2507/"
+  },
+  {
+    "name": "이경진",
+    "link1": "https://kungjin.github.io/html2507/",
+    "link2": "https://kungjin.github.io/js2507/",
+    "link3": "https://kungjin.github.io/test2507/"
+  },
+  {
+    "name": "이은정",
+    "link1": "https://lej9310.github.io/html2507/",
+    "link2": "https://lej9310.github.io/js2507/",
+    "link3": "https://lej9310.github.io/test2507/"
+  },
+  {
+    "name": "이정재",
+    "link1": "https://onwardjake.github.io/html2507/",
+    "link2": "https://onwardjake.github.io/js2507/",
+    "link3": "https://onwardjake.github.io/test2507/"
+  },
+  {
+    "name": "임승우",
+    "link1": "https://lsw1232414.github.io/html2507",
+    "link2": "https://lsw1232414.github.io/js2507",
+    "link3": "https://lsw1232414.github.io/test2507"
+  },
+  {
+    "name": "장경건",
+    "link1": "https://gxnny19.github.io/html2507/",
+    "link2": "https://gxnny19.github.io/js2507/",
+    "link3": "https://gxnny19.github.io/test2507/"
+  },
+  {
+    "name": "정희찬",
+    "link1": "https://huch99.github.io/html2507/",
+    "link2": "https://huch99.github.io/js2507/",
+    "link3": "https://huch99.github.io/test2507/"
+  },
+  {
+    "name": "최윤아",
+    "link1": "https://lejardindeyuna.github.io/html2507_3/",
+    "link2": "https://lejardindeyuna.github.io/js2507/",
+    "link3": "https://lejardindeyuna.github.io/test2507/"
+  },
+  {
+    "name": "최지현",
+    "link1": "https://jihyeon1011.github.io/html2507_3/",
+    "link2": "https://jihyeon1011.github.io/js2507/",
+    "link3": "https://jihyeon1011.github.io/test2507/"
+  },
+  {
+    "name": "김영남",
+    "link1": "https://youngnam81-kim.github.io/html2507/",
+    "link2": "https://youngnam81-kim.github.io/js2507/",
+    "link3": "https://youngnam81-kim.github.io/test2507/"
+  }
 ]
