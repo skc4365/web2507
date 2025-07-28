@@ -1,29 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 연습</title>
+    <title>학습예제</title>
 </head>
 
 <body>
-    <!-- 결과를 뿌려줄 영역 -->
-    <p id="result">결과</p>
+    <h1>학습예제</h1>
 
-    <!-- 스크립트 태그안에 기술 -->
+    <div id="exContainer"></div>
+    <script src="./exJs.js"></script>
     <script>
-        // 선언부
-        let name = "Kim"
-        let classRoom = 204
+        // JSON 파일 경로를 지정하여 함수 호출
+        fetchJsonAndCreateTable('./exJs.json');
 
-        // 구현부
-        let result = "이름: " + name + ", 반: " + classRoom
-
-        // 출력부
-        console.log(result)
-        console.log(`이름은 ${name}이고, ${classRoom}반이야~!`)
-        document.getElementById("result").innerHTML = result
     </script>
 </body>
 
