@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 연습</title>
+</head>
+
+<body>
+    <!-- 결과를 뿌려줄 영역 -->
+    <p id="result">결과</p>
+
+    <!-- 스크립트 태그안에 기술 -->
+    <script>
+        // 선언부
+        let name = "Kim"
+        let classRoom = 204
+
+        // 구현부
+        let result = "이름: " + name + ", 반: " + classRoom
+
+        // 출력부
+        console.log(result)
+        console.log(`이름은 ${name}이고, ${classRoom}반이야~!`)
+        document.getElementById("result").innerHTML = result
+    </script>
+</body>
+
+</html>
