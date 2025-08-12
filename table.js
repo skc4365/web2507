@@ -1,95 +1,148 @@
-// JSON 파일을 가져와서 테이블로 변환하는 함수
-function fetchJsonAndCreateTable(jsonFilePath) {
-    fetch(jsonFilePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('네트워크 응답에 문제가 있습니다.');
-            }
-            return response.json();
-        })
-        .then(data => {
-            createTable(data);
-        })
-        .catch(error => {
-            console.error('데이터를 가져오는 중 오류가 발생했습니다:', error);
-        });
+// table.js
+
+// JSON 파일을 가져와서 테이블을 생성하는 함수
+async function fetchJsonAndCreateTable(jsonFilePath) {
+    try {
+        // JSON 파일 fetch
+        const response = await fetch(jsonFilePath);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const tableData = await response.json();
+
+        // 테이블 생성
+        const tableHTML = createTable(tableData);
+
+        // DOM에 테이블 삽입
+        const tableContainer = document.getElementById('tableContainer');
+        if (tableContainer) {
+            tableContainer.innerHTML = tableHTML;
+        } else {
+            console.error('tableContainer 요소를 찾을 수 없습니다.');
+        }
+
+    } catch (error) {
+        console.error('JSON 파일을 불러오는 중 오류가 발생했습니다:', error);
+
+        // 오류 메시지를 화면에 표시
+        const tableContainer = document.getElementById('tableContainer');
+        if (tableContainer) {
+            tableContainer.innerHTML = `
+        <div style="color: red; padding: 20px; text-align: center;">
+          <h3>데이터를 불러오는 중 오류가 발생했습니다.</h3>
+          <p>오류 내용: ${error.message}</p>
+        </div>
+      `;
+        }
+    }
 }
 
-// JSON 데이터로 테이블을 생성하는 함수
-function createTable(data) {
-    if (!Array.isArray(data)) {
-        console.error('데이터가 배열 형식이 아닙니다.');
-        return;
-    }
+// 테이블 생성 함수
+function createTable(tableData) {
+    let tableHTML = `
+    <table border="1" style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+      <thead>
+        <tr style="background-color: #f2f2f2;">
+          <th style="padding: 12px; text-align: center; font-weight: bold;">이름/GitHub</th>
+          <th style="padding: 12px; text-align: center; font-weight: bold;">HTML</th>
+          <th style="padding: 12px; text-align: center; font-weight: bold;">JavaScript</th>
+          <th style="padding: 12px; text-align: center; font-weight: bold;">Test</th>
+          <th style="padding: 12px; text-align: center; font-weight: bold;">React Site</th>
+        </tr>
+      </thead>
+      <tbody>
+  `;
 
-    const table = document.createElement('table');
-    table.border = '1px';
-    table.style.borderCollapse = 'collapse';
+    // 각 데이터 행 생성
+    tableData.forEach(function (item, index) {
+        const nameAndGithub = item.name.split('/');
+        const userName = nameAndGithub[0];
+        const githubId = nameAndGithub[1];
 
-    // 테이블 헤더 생성
-    if (data.length > 0) {
-        const headerRow = document.createElement('tr');
+        // 행의 배경색을 번갈아 가며 설정
+        const rowBgColor = index % 2 === 0 ? '#ffffff' : '#f9f9f9';
 
-        // 4개의 컬럼 헤더 설정 (데이터에 없으면 기본값 사용)
-        const headerNames = ['link1', 'link2', 'link3', 'link4'];
-
-        // 데이터에 있는 헤더가 있으면 사용
-        const dataHeaders = Object.keys(data[0]);
-        for (let i = 0; i < 4; i++) {
-            const th = document.createElement('th');
-            th.textContent = i < dataHeaders.length ? dataHeaders[i] : headerNames[i];
-            th.style.padding = '10px';
-            headerRow.appendChild(th);
-        }
-
-        table.appendChild(headerRow);
-    }
-
-    // 테이블 데이터 행 생성
-    data.forEach(item => {
-        const row = document.createElement('tr');
-        const keys = Object.keys(item);
-
-        // 4개의 컬럼 데이터 채우기
-        for (let i = 0; i < 4; i++) {
-            const td = document.createElement('td');
-            td.style.padding = '10px';
-
-            if (i < keys.length) {
-                const key = keys[i];
-                const value = item[key];
-
-                // 두 번째, 세 번째, 네 번째 컬럼(인덱스 1, 2, 3)인 경우 a 태그로 생성
-                if ((i === 1 || i === 2 || i === 3) && value) {
-                    const link = document.createElement('a');
-                    link.href = value; // 값을 URL로 사용
-                    link.textContent = value; // 링크 텍스트도 URL로 표시
-                    link.target = "_blank"; // 새 탭에서 열기
-                    td.appendChild(link);
-                } else {
-                    td.textContent = value || '';
-                }
-            } else {
-                // 데이터가 없는 경우 빈 셀
-                td.textContent = '';
-            }
-
-            row.appendChild(td);
-        }
-
-        table.appendChild(row);
+        tableHTML += `
+      <tr style="background-color: ${rowBgColor};">
+        <td style="padding: 10px; text-align: center;">
+          <strong>${userName}</strong><br>
+          <a href="https://github.com/${githubId}" target="_blank" 
+             style="color: #0066cc; text-decoration: none; font-size: 0.9em;">
+            @${githubId}
+          </a>
+        </td>
+        <td style="padding: 10px; text-align: center;">
+          <a href="https://${githubId}.github.io/${item.link1}/" target="_blank" 
+             style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
+                    border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
+            ${item.link1}
+          </a>
+        </td>
+        <td style="padding: 10px; text-align: center;">
+          <a href="https://${githubId}.github.io/${item.link2}/" target="_blank" 
+             style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
+                    border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
+            ${item.link2}
+          </a>
+        </td>
+        <td style="padding: 10px; text-align: center;">
+          <a href="https://${githubId}.github.io/${item.link3}/" target="_blank" 
+             style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
+                    border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
+            ${item.link3}
+          </a>
+        </td>
+        <td style="padding: 10px; text-align: center;">
+          <a href="https://${githubId}.github.io/${item.link4}/" target="_blank" 
+             style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
+                    border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
+            ${item.link4}
+          </a>
+        </td>
+      </tr>
+    `;
     });
 
-    // 기존 테이블이 있으면 제거
-    const container = document.getElementById('tableContainer');
-    if (container) {
-        container.innerHTML = '';
-        container.appendChild(table);
-    } else {
-        // 컨테이너가 없으면 body에 직접 추가
-        document.body.appendChild(table);
-    }
+    tableHTML += `
+      </tbody>
+    </table>
+    <div style="margin-top: 10px; font-size: 0.9em; color: #666; text-align: center;">
+      총 ${tableData.length}명의 학생 프로젝트
+    </div>
+  `;
+
+    return tableHTML;
 }
 
-// 사용 예시
-// fetchJsonAndCreateTable('경로/파일명.json');
+// 호버 효과를 위한 CSS 스타일 추가
+function addTableStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+    table tr:hover {
+      background-color: #e6f3ff !important;
+    }
+    
+    table a:hover {
+      background-color: #0066cc !important;
+      color: white !important;
+      text-decoration: none !important;
+    }
+    
+    @media (max-width: 768px) {
+      table {
+        font-size: 0.8em;
+      }
+      
+      table th, table td {
+        padding: 6px !important;
+      }
+    }
+  `;
+    document.head.appendChild(style);
+}
+
+// DOM이 로드된 후 스타일 추가
+document.addEventListener('DOMContentLoaded', function () {
+    addTableStyles();
+});
