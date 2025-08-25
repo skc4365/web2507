@@ -50,6 +50,7 @@ function createTable(tableData) {
           <th style="padding: 12px; text-align: center; font-weight: bold;">Test</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">React Site</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">React Test2508</th>
+          <th style="padding: 12px; text-align: center; font-weight: bold;">Vue Site</th>
         </tr>
       </thead>
       <tbody>
@@ -103,6 +104,13 @@ function createTable(tableData) {
         </td>
         <td style="padding: 10px; text-align: center;">
           <a href="https://${githubId}.github.io/${item.link5}/" target="_blank" 
+             style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
+                    border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
+            ${item.link5}
+          </a>
+        </td>
+        <td style="padding: 10px; text-align: center;">
+          <a href="https://${githubId}.github.io/${item.link6}/" target="_blank" 
              style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
                     border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
             ${item.link5}
