@@ -113,7 +113,7 @@ function createTable(tableData) {
           <a href="https://${githubId}.github.io/${item.link6}/" target="_blank" 
              style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
                     border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
-            ${item.link5}
+            ${item.link6}
           </a>
         </td>
       </tr>
