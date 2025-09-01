@@ -52,6 +52,7 @@ function createTable(tableData) {
           <th style="padding: 12px; text-align: center; font-weight: bold;">React Test2508</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">Vue Site</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">Figma공유</th>
+          <th style="padding: 12px; text-align: center; font-weight: bold;">Java코드</th>
         </tr>
       </thead>
       <tbody>
@@ -122,6 +123,13 @@ function createTable(tableData) {
              style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
                     border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
             figma공유
+          </a>
+        </td>
+        <td style="padding: 10px; text-align: center;">
+          <strong>${userName}</strong><br>
+          <a href="https://github.com/${githubId}/java2509" target="_blank" 
+             style="color: #0066cc; text-decoration: none; font-size: 0.9em;">
+            ${item.link8}
           </a>
         </td>
       </tr>
