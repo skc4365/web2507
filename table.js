@@ -51,6 +51,7 @@ function createTable(tableData) {
           <th style="padding: 12px; text-align: center; font-weight: bold;">React Site</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">React Test2508</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">Vue Site</th>
+          <th style="padding: 12px; text-align: center; font-weight: bold;">Figma공유</th>
         </tr>
       </thead>
       <tbody>
@@ -114,6 +115,13 @@ function createTable(tableData) {
              style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
                     border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
             ${item.link6}
+          </a>
+        </td>
+        <td style="padding: 10px; text-align: center;">
+          <a href="${item.link7}" target="_blank" 
+             style="color: #0066cc; text-decoration: none; padding: 5px 10px; 
+                    border: 1px solid #0066cc; border-radius: 4px; display: inline-block;">
+            ${item.link7}
           </a>
         </td>
       </tr>
