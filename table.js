@@ -55,6 +55,7 @@ function createTable(tableData) {
           <th style="padding: 12px; text-align: center; font-weight: bold;">Java코드</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">MariaDB_SQL</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">HRDTest</th>
+          <th style="padding: 12px; text-align: center; font-weight: bold;">SpringBoot1</th>
         </tr>
       </thead>
       <tbody>
@@ -146,6 +147,13 @@ function createTable(tableData) {
           <a href="https://github.com/${githubId}/hrdTest" target="_blank" 
              style="color: #0066cc; text-decoration: none; font-size: 0.9em;">
             ${item.link10}
+          </a>
+        </td>
+        <td style="padding: 10px; text-align: center;">
+          <strong>${userName}</strong><br>
+          <a href="https://github.com/${githubId}/ex-ch03" target="_blank" 
+             style="color: #0066cc; text-decoration: none; font-size: 0.9em;">
+            ${item.link11}
           </a>
         </td>
       </tr>
