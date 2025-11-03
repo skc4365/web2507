@@ -57,6 +57,7 @@ function createTable(tableData) {
           <th style="padding: 12px; text-align: center; font-weight: bold;">HRDTest</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">SpringBoot1</th>
           <th style="padding: 12px; text-align: center; font-weight: bold;">GitBranch</th>
+          <th style="padding: 12px; text-align: center; font-weight: bold;">개인프로젝트</th>
         </tr>
       </thead>
       <tbody>
@@ -162,6 +163,13 @@ function createTable(tableData) {
           <a href="https://github.com/${githubId}/ex25-branch" target="_blank" 
              style="color: #0066cc; text-decoration: none; font-size: 0.9em;">
             ${item.link12}
+          </a>
+        </td>
+        <td style="padding: 10px; text-align: center;">
+          <strong>${userName}</strong><br>
+          <a href="https://github.com/${githubId}/side-proj" target="_blank" 
+             style="color: #0066cc; text-decoration: none; font-size: 0.9em;">
+            ${item.link13}
           </a>
         </td>
       </tr>
